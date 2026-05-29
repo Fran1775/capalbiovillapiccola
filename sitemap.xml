@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://cdcdimore.com/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://cdcdimore.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cdcdimore.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cdcdimore.com/"/>
+    <image:image>
+      <image:loc>https://cdcdimore.com/assets/hero.jpg</image:loc>
+      <image:title>Villa di lusso a Capalbio — Esterno con piscina</image:title>
+      <image:caption>Villa moderna a Capalbio, Maremma Toscana</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdcdimore.com/assets/piscina-sfioro.jpg</image:loc>
+      <image:title>Piscina a sfioro</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdcdimore.com/assets/sera-fuoco.jpg</image:loc>
+      <image:title>Villa al crepuscolo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdcdimore.com/assets/spa-jacuzzi.jpg</image:loc>
+      <image:title>Area SPA — Jacuzzi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cdcdimore.com/assets/portico-vetrato.jpg</image:loc>
+      <image:title>Giardino con piscina</image:title>
+    </image:image>
+  </url>
+</urlset>
