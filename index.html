@@ -31,7 +31,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%;position:relative}
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:400;line-height:1.08;letter-spacing:-.01em}
-img{display:block;width:100%;height:100%;object-fit:cover}
+img{display:block;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 a{color:inherit;text-decoration:none}
 
 /* ---------- HEADER (dark, logo in white badge) ---------- */
@@ -577,6 +577,23 @@ lb.addEventListener('click',e=>{if(e.target===lb)close()});
 document.getElementById('lbNext').onclick=e=>{e.stopPropagation();idx=(idx+1)%gs.length;render()};
 document.getElementById('lbPrev').onclick=e=>{e.stopPropagation();idx=(idx-1+gs.length)%gs.length;render()};
 addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')document.getElementById('lbNext').click();if(e.key==='ArrowLeft')document.getElementById('lbPrev').click()});
+
+// ========== IMAGE PROTECTION ==========
+// Blocca click destro su immagini e galleria
+document.addEventListener('contextmenu',e=>{
+  if(e.target.tagName==='IMG' || e.target.closest('.g') || e.target.closest('.lb') || e.target.closest('.slide')){
+    e.preventDefault();
+    return false;
+  }
+});
+// Blocca drag delle immagini
+document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG'){e.preventDefault();return false}});
+// Blocca Ctrl+S / Cmd+S quando lightbox aperto
+document.addEventListener('keydown',e=>{
+  if(lb.classList.contains('open') && (e.ctrlKey||e.metaKey) && (e.key==='s'||e.key==='S')){
+    e.preventDefault();return false;
+  }
+});
 </script>
 </body>
 </html>
