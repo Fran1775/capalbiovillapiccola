@@ -183,6 +183,9 @@ footer{background:#081019;color:#7d8c99;padding:46px 5vw;text-align:center}
 footer .fline{font-size:.82rem;letter-spacing:.04em}
 footer a{color:var(--blue-light)}
 .disclaimer{margin-top:18px;font-size:.66rem;opacity:.55;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6}
+.ai-disclaimer{margin:30px auto 0;max-width:680px;padding:22px 26px;border:1px solid rgba(255,255,255,.08);border-radius:6px;text-align:left;font-size:.72rem;line-height:1.6;color:#8a949f}
+.ai-disclaimer .ai-d-title{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-light);margin-bottom:12px;font-weight:400}
+.ai-disclaimer p+p{margin-top:10px}
 
 /* ---------- LIGHTBOX ---------- */
 .lb{position:fixed;inset:0;background:rgba(6,12,18,.97);z-index:200;display:none;align-items:center;justify-content:center;padding:4vw}
@@ -250,7 +253,7 @@ footer a{color:var(--blue-light)}
   <div class="topbar-logo"><img src="assets/logo-color.png" alt="CDC S.r.l."></div>
   <div class="topbar-right">
     <div class="lang-toggle"><button class="lang-btn" data-lang="it">IT</button><span>/</span><button class="lang-btn" data-lang="en">EN</button></div>
-    <a href="#contatti" class="topbar-cta"><span class="t" data-it="Richiedi una visita" data-en="Request a viewing">Richiedi una visita</span></a>
+    <a href="#contatti" class="topbar-cta" data-i18n="nav.request">Richiedi una visita</a>
   </div>
 </div>
 
@@ -459,6 +462,11 @@ footer a{color:var(--blue-light)}
 <footer>
   <div class="footer-logo"><img src="assets/logo-color.png" alt="CDC S.r.l."></div>
   <div class="fline">Via Carlo Mirabello 7, 00195 Roma — <a href="mailto:info@cdcitalia.com">info@cdcitalia.com</a> — 06 37519969</div>
+  <div class="ai-disclaimer">
+    <div class="ai-d-title" data-i18n="footer.aiTitle">Nota di trasparenza sulle immagini</div>
+    <p data-i18n="footer.aiP1">Alcune immagini hanno subito interventi di post-produzione e fotoritocco digitale attraverso l'uso di tecnologie di intelligenza artificiale. La villa, la piscina, il portico e l'intera struttura architettonica visibili nelle foto sono totalmente reali, esistenti e fedeli allo stato di fatto.</p>
+    <p data-i18n="footer.aiP2">Le modifiche apportate si limitano esclusivamente a interventi di re-styling virtuale ed elementi di arredo: inserimento di piante, ulivi e siepi perimetrali; perfezionamento del manto erboso; aggiunta di elementi decorativi e d'arredo (barbecue, divani da esterno, tende, quadri); rimozione visiva di elementi di disturbo sullo sfondo. Tali interventi mostrano le potenzialità estetiche degli spazi senza alterare struttura, dimensioni o caratteristiche originali degli immobili.</p>
+  </div>
   <div class="disclaimer" data-i18n="footer.disclaimer">Le informazioni contenute in questa pagina hanno carattere meramente illustrativo e non costituiscono elemento contrattuale né offerta al pubblico ai sensi dell'art. 1336 c.c. Dati, superfici e caratteristiche sono indicativi e dovranno essere verificati in sede di trattativa.</div>
 </footer>
 
@@ -484,7 +492,7 @@ const I18N={
     "hero.sub":"Newly built modern villa · Private 15,000 sqm grounds · Just minutes from the sea",
     "hero.priceLabel":"For sale",
     "hero.priceVal":"Price upon request",
-    "nav.overview":"Overview","nav.gallery":"Gallery","nav.wellness":"Wellness","nav.rent":"Rental","nav.land":"The Land","nav.location":"Location","nav.contact":"Request info",
+    "nav.overview":"Overview","nav.gallery":"Gallery","nav.wellness":"Wellness","nav.rent":"Rental","nav.land":"The Land","nav.location":"Location","nav.contact":"Request info","nav.request":"Request a viewing",
     "trust.surface":"Surface · 3 levels","trust.rooms":"Bedrooms · 7 bathrooms","trust.park":"Private grounds","trust.energy":"Energy class",
     "overview.eyebrow":"The property",
     "overview.lead":"Absolute privacy and <em>contemporary comfort</em>, set in a natural landscape of rare beauty.",
@@ -513,6 +521,9 @@ const I18N={
     "final.eyebrow":"Contact","final.lead":"Let us arrange a <em>private viewing.</em>","final.email":"Send an email",
     "mcta.call":"Call",
     "footer.disclaimer":"The information on this page is for illustrative purposes only and does not constitute a contractual element nor a public offer pursuant to art. 1336 of the Italian Civil Code. Data, surfaces and features are indicative and must be verified during negotiations.",
+    "footer.aiTitle":"Image transparency notice",
+    "footer.aiP1":"Some images have been digitally retouched in post-production using artificial intelligence technologies. The villa, the pool, the portico and the entire architectural structure shown in the photos are entirely real, existing, and faithful to the actual state of the property.",
+    "footer.aiP2":"The edits are strictly limited to virtual re-styling and furnishing elements: addition of plants, olive trees and perimeter hedges; refinement of the lawn; addition of decorative and furnishing elements (barbecue, outdoor sofas, curtains, paintings); visual removal of distracting background elements. These interventions illustrate the aesthetic potential of the spaces without altering in any way the structure, dimensions or original characteristics of the property.",
     "title":"Exclusive villa in Capalbio — Tuscan Maremma | CDC"
   }
 };
