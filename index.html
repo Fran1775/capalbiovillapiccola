@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Villa esclusiva a Capalbio — Maremma Toscana | CDC</title>
-<meta name="description" content="Villa moderna di nuova costruzione a Capalbio, nel cuore della Maremma toscana. Piscina a sfioro, area SPA privata, parco di 15.000 mq. A pochi minuti dal mare.">
+<meta name="description" content="Villa moderna di nuova costruzione a Capalbio, nel cuore della Maremma toscana. Piscina a sfioro, area SPA privata, parco di 15.000 mq, vigneto e oltre 100 ulivi. A pochi minuti dal mare.">
 <meta property="og:title" content="Villa esclusiva a Capalbio — Maremma Toscana">
 <meta property="og:description" content="Villa moderna con piscina e SPA privata, immersa in un parco di 15.000 mq nella Maremma toscana.">
 <meta property="og:image" content="assets/hero.jpg">
@@ -42,6 +42,15 @@ a{color:inherit;text-decoration:none}
 .topbar-logo img{width:auto;height:100%;object-fit:contain}
 .topbar-cta{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);padding:11px 22px;transition:.4s;font-weight:400}
 .topbar-cta:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.topbar-right{display:flex;align-items:center;gap:18px}
+.lang-toggle{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.7);font-size:.74rem;letter-spacing:.18em}
+.lang-btn{background:none;border:none;color:rgba(255,255,255,.5);font-size:.74rem;letter-spacing:.18em;font-family:'Outfit',sans-serif;cursor:pointer;padding:4px 2px;transition:.3s;font-weight:400}
+.lang-btn.active{color:#fff;border-bottom:1px solid var(--blue-light)}
+.lang-btn:hover{color:#fff}
+[data-it],[data-en]{display:none}
+html[lang="it"] [data-it]{display:inline}
+html[lang="en"] [data-en]{display:inline}
+html[lang="it"] [data-it][data-block],html[lang="en"] [data-en][data-block]{display:block}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;height:100vh;height:100dvh;min-height:600px;overflow:hidden}
@@ -124,6 +133,11 @@ a{color:inherit;text-decoration:none}
 .rent-card .rc-price{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3vw,2.6rem);font-weight:300;color:#fff;line-height:1}
 .rent-card .rc-price span{font-size:.95rem;color:var(--muted);font-family:'Outfit',sans-serif;margin-left:6px}
 .rent-card .rc-note{font-size:.92rem;color:var(--ink-dim);margin-top:16px}
+.land-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.land-card{background:var(--bg-2);border:1px solid var(--line);padding:38px 34px;text-align:center}
+.land-card .lc-icon{font-size:2.2rem;margin-bottom:16px;filter:grayscale(.15)}
+.land-card h3{font-size:1.5rem;font-weight:400;color:#fff;margin-bottom:10px;font-family:'Fraunces',serif}
+.land-card p{font-size:.95rem;color:var(--ink-dim)}
 .loc-list .row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
 .loc-list .row .place{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:400;color:#fff}
 .loc-list .row .time{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-light)}
@@ -195,6 +209,7 @@ footer a{color:var(--blue-light)}
   .topbar-cta{display:none}
   .features{grid-template-columns:1fr}
   .rent-cards{grid-template-columns:1fr}
+  .land-cards{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:auto;gap:8px}
   .g{aspect-ratio:4/3}
   .g.w6,.g.w4{grid-column:span 4}.g.w3,.g.w2{grid-column:span 2}.g.h2{grid-row:span 1}
@@ -233,7 +248,10 @@ footer a{color:var(--blue-light)}
 
 <div class="topbar">
   <div class="topbar-logo"><img src="assets/logo-color.png" alt="CDC S.r.l."></div>
-  <a href="#contatti" class="topbar-cta">Richiedi una visita</a>
+  <div class="topbar-right">
+    <div class="lang-toggle"><button class="lang-btn" data-lang="it">IT</button><span>/</span><button class="lang-btn" data-lang="en">EN</button></div>
+    <a href="#contatti" class="topbar-cta"><span class="t" data-it="Richiedi una visita" data-en="Request a viewing">Richiedi una visita</span></a>
+  </div>
 </div>
 
 <section class="hero" id="top">
@@ -245,13 +263,13 @@ footer a{color:var(--blue-light)}
   </div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-eyebrow">Maremma Toscana · Capalbio</div>
-      <h1>Una residenza tra<br><em>mare e campagna</em></h1>
-      <p class="hero-loc">Villa moderna di nuova costruzione · Parco privato di 15.000 mq · A pochi minuti dal mare</p>
+      <div class="hero-eyebrow" data-i18n="hero.eyebrow">Maremma Toscana · Capalbio</div>
+      <h1 data-i18n="hero.h1" data-html="true">Una residenza tra<br><em>mare e campagna</em></h1>
+      <p class="hero-loc" data-i18n="hero.sub">Villa moderna di nuova costruzione · Parco privato di 15.000 mq · A pochi minuti dal mare</p>
     </div>
     <div class="hero-meta">
-      <div class="price-label">Vendita</div>
-      <div class="price">Trattativa riservata</div>
+      <div class="price-label" data-i18n="hero.priceLabel">Vendita</div>
+      <div class="price" data-i18n="hero.priceVal">Trattativa riservata</div>
     </div>
   </div>
   <div class="slide-dots" id="dots"></div>
@@ -259,56 +277,57 @@ footer a{color:var(--blue-light)}
 
 <div class="subbar" id="subbar">
   <div class="subbar-nav">
-    <a href="#panoramica">Panoramica</a>
-    <a href="#galleria">Galleria</a>
-    <a href="#benessere">Benessere</a>
-    <a href="#rent">Affitto</a>
-    <a href="#posizione">Posizione</a>
+    <a href="#panoramica" data-i18n="nav.overview">Panoramica</a>
+    <a href="#galleria" data-i18n="nav.gallery">Galleria</a>
+    <a href="#benessere" data-i18n="nav.wellness">Benessere</a>
+    <a href="#rent" data-i18n="nav.rent">Affitto</a>
+    <a href="#terra" data-i18n="nav.land">La Terra</a>
+    <a href="#posizione" data-i18n="nav.location">Posizione</a>
   </div>
   <div class="subbar-right">
-    <span class="subbar-price">Trattativa riservata</span>
-    <a href="#contatti" class="subbar-btn">Richiedi informazioni</a>
+    <span class="subbar-price" data-i18n="hero.priceVal">Trattativa riservata</span>
+    <a href="#contatti" class="subbar-btn" data-i18n="nav.contact">Richiedi informazioni</a>
   </div>
 </div>
 
 <section class="trust">
-  <div class="trust-item"><div class="n">250<em> mq</em></div><div class="l">Superficie · 3 livelli</div></div>
-  <div class="trust-item"><div class="n">5</div><div class="l">Camere · 7 bagni</div></div>
-  <div class="trust-item"><div class="n">15.000<em> mq</em></div><div class="l">Parco privato</div></div>
-  <div class="trust-item"><div class="n">A</div><div class="l">Classe energetica</div></div>
+  <div class="trust-item"><div class="n">250<em> mq</em></div><div class="l" data-i18n="trust.surface">Superficie · 3 livelli</div></div>
+  <div class="trust-item"><div class="n">5</div><div class="l" data-i18n="trust.rooms">Camere · 7 bagni</div></div>
+  <div class="trust-item"><div class="n">15.000<em> mq</em></div><div class="l" data-i18n="trust.park">Parco privato</div></div>
+  <div class="trust-item"><div class="n">A</div><div class="l" data-i18n="trust.energy">Classe energetica</div></div>
 </section>
 
 <div class="shell">
   <div class="main-col">
 
     <div class="block reveal" id="panoramica">
-      <div class="eyebrow">La proprietà</div>
-      <h2 class="lead">Privacy assoluta e <em>comfort contemporaneo</em>, in un contesto naturale di rara bellezza.</h2>
+      <div class="eyebrow" data-i18n="overview.eyebrow">La proprietà</div>
+      <h2 class="lead" data-i18n="overview.lead" data-html="true">Privacy assoluta e <em>comfort contemporaneo</em>, in un contesto naturale di rara bellezza.</h2>
       <div class="prose">
-        <p>Recentemente realizzata e finemente rifinita, la villa si sviluppa su tre livelli per circa 250 mq complessivi. Il piano terra è organizzato in un ampio living open space con zona pranzo e cucina moderna, pensato per accogliere la luce naturale e favorire la convivialità.</p>
-        <p>La zona notte comprende quattro camere matrimoniali e una camera per gli ospiti, tutte con bagno privato. Il livello seminterrato è dedicato al benessere, con una raffinata area SPA e un salone affacciato su un portico chiuso da ampie vetrate scorrevoli, vivibile tutto l'anno.</p>
+        <p data-i18n="overview.p1">Recentemente realizzata e finemente rifinita, la villa si sviluppa su tre livelli per circa 250 mq complessivi. Il piano terra è organizzato in un ampio living open space con zona pranzo e cucina moderna, pensato per accogliere la luce naturale e favorire la convivialità.</p>
+        <p data-i18n="overview.p2">La zona notte comprende quattro camere matrimoniali e una camera per gli ospiti, tutte con bagno privato. Il livello seminterrato è dedicato al benessere, con una raffinata area SPA e un salone affacciato su un portico chiuso da ampie vetrate scorrevoli, vivibile tutto l'anno.</p>
       </div>
       <div class="specs">
-        <div class="r"><span class="k">Tipologia</span><span class="v">Villa indipendente</span></div>
-        <div class="r"><span class="k">Superficie totale</span><span class="v">~250 m²</span></div>
-        <div class="r"><span class="k">Livelli</span><span class="v">3</span></div>
-        <div class="r"><span class="k">Camere / Bagni</span><span class="v">5 / 7</span></div>
-        <div class="r"><span class="k">Superficie terreno</span><span class="v">~15.000 m²</span></div>
-        <div class="r"><span class="k">Area giardino</span><span class="v">~3.000 m²</span></div>
-        <div class="r"><span class="k">Classe energetica</span><span class="v">A</span></div>
-        <div class="r"><span class="k">Riscaldamento</span><span class="v">Autonomo · Pompa di calore · Solare</span></div>
-        <div class="r"><span class="k">Restrizioni edilizie</span><span class="v">Nessuna</span></div>
-        <div class="r"><span class="k">Stato</span><span class="v">Nuova costruzione · Arredata</span></div>
+        <div class="r"><span class="k" data-i18n="specs.type">Tipologia</span><span class="v" data-i18n="specs.typeV">Villa indipendente</span></div>
+        <div class="r"><span class="k" data-i18n="specs.surface">Superficie totale</span><span class="v">~250 m²</span></div>
+        <div class="r"><span class="k" data-i18n="specs.levels">Livelli</span><span class="v">3</span></div>
+        <div class="r"><span class="k" data-i18n="specs.rooms">Camere / Bagni</span><span class="v">5 / 7</span></div>
+        <div class="r"><span class="k" data-i18n="specs.land">Superficie terreno</span><span class="v">~15.000 m²</span></div>
+        <div class="r"><span class="k" data-i18n="specs.garden">Area giardino</span><span class="v">~3.000 m²</span></div>
+        <div class="r"><span class="k" data-i18n="specs.energy">Classe energetica</span><span class="v">A</span></div>
+        <div class="r"><span class="k" data-i18n="specs.heat">Riscaldamento</span><span class="v" data-i18n="specs.heatV">Autonomo · Pompa di calore · Solare</span></div>
+        <div class="r"><span class="k" data-i18n="specs.restr">Restrizioni edilizie</span><span class="v" data-i18n="specs.restrV">Nessuna</span></div>
+        <div class="r"><span class="k" data-i18n="specs.state">Stato</span><span class="v" data-i18n="specs.stateV">Nuova costruzione · Arredata</span></div>
       </div>
     </div>
 
     <div class="block reveal" id="galleria">
       <div class="gallery-head">
         <div>
-          <div class="eyebrow" style="margin-bottom:8px">Galleria</div>
-          <h2 class="lead" style="font-size:clamp(1.5rem,2.6vw,2.2rem)">Ogni ambiente, pensato per la luce.</h2>
+          <div class="eyebrow" style="margin-bottom:8px" data-i18n="gallery.eyebrow">Galleria</div>
+          <h2 class="lead" style="font-size:clamp(1.5rem,2.6vw,2.2rem)" data-i18n="gallery.lead">Ogni ambiente, pensato per la luce.</h2>
         </div>
-        <div class="gallery-count">13 fotografie</div>
+        <div class="gallery-count" data-i18n="gallery.count">13 fotografie</div>
       </div>
       <div class="gallery-grid" id="grid">
         <div class="g w4 h2" data-full="assets/hero.jpg"><img src="assets/hero.jpg" alt="Esterno con piscina"><div class="cap">Esterno · Piscina</div></div>
@@ -328,48 +347,69 @@ footer a{color:var(--blue-light)}
     </div>
 
     <div class="block reveal" id="benessere">
-      <div class="eyebrow">Benessere</div>
-      <h2 class="lead">Un livello dedicato <em>interamente al relax.</em></h2>
+      <div class="eyebrow" data-i18n="wellness.eyebrow">Benessere</div>
+      <h2 class="lead" data-i18n="wellness.lead" data-html="true">Un livello dedicato <em>interamente al relax.</em></h2>
       <div class="features">
-        <div class="feat"><div class="ico">— Area SPA</div><h3>Wellness privato</h3><p>Jacuzzi, sauna, doccia emozionale e parete di sale, al piano seminterrato dedicato al benessere.</p></div>
-        <div class="feat"><div class="ico">— Outdoor</div><h3>Piscina &amp; solarium</h3><p>Piscina con zona solarium nel parco privato, integrata nel paesaggio della Maremma.</p></div>
-        <div class="feat"><div class="ico">— Comfort</div><h3>Vivibile tutto l'anno</h3><p>Salone affacciato su portico chiuso da ampie vetrate scorrevoli, ideale in ogni stagione.</p></div>
-        <div class="feat"><div class="ico">— Dotazioni</div><h3>Efficienza &amp; sicurezza</h3><p>Classe A, pompa di calore e solare. Climatizzazione, sistema di sicurezza e finiture di pregio.</p></div>
+        <div class="feat"><div class="ico" data-i18n="feat.spa.ico">— Area SPA</div><h3 data-i18n="feat.spa.h">Wellness privato</h3><p data-i18n="feat.spa.p">Jacuzzi, sauna, doccia emozionale e parete di sale, al piano seminterrato dedicato al benessere.</p></div>
+        <div class="feat"><div class="ico" data-i18n="feat.out.ico">— Outdoor</div><h3 data-i18n="feat.out.h">Piscina &amp; solarium</h3><p data-i18n="feat.out.p">Piscina con zona solarium nel parco privato, integrata nel paesaggio della Maremma.</p></div>
+        <div class="feat"><div class="ico" data-i18n="feat.com.ico">— Comfort</div><h3 data-i18n="feat.com.h">Vivibile tutto l'anno</h3><p data-i18n="feat.com.p">Salone affacciato su portico chiuso da ampie vetrate scorrevoli, ideale in ogni stagione.</p></div>
+        <div class="feat"><div class="ico" data-i18n="feat.dot.ico">— Dotazioni</div><h3 data-i18n="feat.dot.h">Efficienza &amp; sicurezza</h3><p data-i18n="feat.dot.p">Classe A, pompa di calore e solare. Climatizzazione, sistema di sicurezza e finiture di pregio.</p></div>
       </div>
     </div>
 
     <div class="block reveal" id="rent">
-      <div class="eyebrow">Affitto</div>
-      <h2 class="lead">Disponibile anche per <em>soggiorni esclusivi.</em></h2>
+      <div class="eyebrow" data-i18n="rent.eyebrow">Affitto</div>
+      <h2 class="lead" data-i18n="rent.lead" data-html="true">Disponibile anche per <em>soggiorni esclusivi.</em></h2>
       <div class="prose">
-        <p>La villa è disponibile per affitti di alta stagione, ideale per chi desidera vivere la Maremma in totale privacy prima di un'eventuale acquisizione. Una formula flessibile, pensata per soggiorni settimanali o per periodi più lunghi.</p>
+        <p data-i18n="rent.p">La villa è disponibile per affitti di alta stagione, ideale per chi desidera vivere la Maremma in totale privacy prima di un'eventuale acquisizione. Una formula flessibile, pensata per soggiorni settimanali o per periodi più lunghi.</p>
       </div>
       <div class="rent-cards">
         <div class="rent-card">
-          <div class="rc-label">Settimanale</div>
-          <div class="rc-price">12.000 €<span>/ settimana</span></div>
-          <div class="rc-note">Alta stagione · Villa intera con parco, piscina e area SPA</div>
+          <div class="rc-label" data-i18n="rent.weekly">Settimanale</div>
+          <div class="rc-price">12.000 €<span data-i18n="rent.weeklyUnit">/ settimana</span></div>
+          <div class="rc-note" data-i18n="rent.weeklyNote">Alta stagione · Villa intera con parco, piscina e area SPA</div>
         </div>
         <div class="rent-card alt">
-          <div class="rc-label">Mensile</div>
-          <div class="rc-price">Tariffe agevolate</div>
-          <div class="rc-note">Condizioni dedicate per soggiorni mensili o prolungati, su richiesta</div>
+          <div class="rc-label" data-i18n="rent.monthly">Mensile</div>
+          <div class="rc-price" data-i18n="rent.monthlyPrice">Tariffe agevolate</div>
+          <div class="rc-note" data-i18n="rent.monthlyNote">Condizioni dedicate per soggiorni mensili o prolungati, su richiesta</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block reveal" id="terra">
+      <div class="eyebrow" data-i18n="land.eyebrow">La Terra</div>
+      <h2 class="lead" data-i18n="land.lead" data-html="true">Un'eredità <em>autenticamente toscana.</em></h2>
+      <div class="prose">
+        <p data-i18n="land.p1">Oltre la villa, la tenuta invita i suoi proprietari a vivere un rituale toscano autentico. I 15.000 mq di terreno comprendono un vigneto privato — pronto per essere ripristinato per la produzione del proprio vino toscano fatto in casa — e oltre cento piante di ulivo, simbolo senza tempo di questa terra, capaci di restituire l'olio extravergine della tenuta.</p>
+        <p data-i18n="land.p2">Una rara opportunità per unire la privacy di una residenza contemporanea con l'anima della Toscana rurale: raccogliere, premere e imbottigliare i frutti della propria terra, come le famiglie della Maremma fanno da generazioni.</p>
+      </div>
+      <div class="land-cards">
+        <div class="land-card">
+          <div class="lc-icon">🍇</div>
+          <h3 data-i18n="land.vineyard.h">Vigneto privato</h3>
+          <p data-i18n="land.vineyard.p">Pronto al ripristino per la produzione di vino toscano della tenuta.</p>
+        </div>
+        <div class="land-card">
+          <div class="lc-icon">🫒</div>
+          <h3 data-i18n="land.olives.h">Oltre 100 ulivi</h3>
+          <p data-i18n="land.olives.p">Per la produzione del proprio olio extravergine d'oliva.</p>
         </div>
       </div>
     </div>
 
     <div class="block reveal" id="posizione">
-      <div class="eyebrow">La posizione</div>
-      <h2 class="lead">Capalbio, tra <em>Toscana e Lazio.</em></h2>
+      <div class="eyebrow" data-i18n="loc.eyebrow">La posizione</div>
+      <h2 class="lead" data-i18n="loc.lead" data-html="true">Capalbio, tra <em>Toscana e Lazio.</em></h2>
       <div class="prose">
-        <p>Capalbio, celebre per l'atmosfera autentica e il suo patrimonio culturale, sorge in una posizione privilegiata della Maremma. Le lunghe spiagge sabbiose, il mare cristallino e la vicinanza all'Argentario rendono quest'area una delle più apprezzate della costa toscana.</p>
+        <p data-i18n="loc.p">Capalbio, celebre per l'atmosfera autentica e il suo patrimonio culturale, sorge in una posizione privilegiata della Maremma. Le lunghe spiagge sabbiose, il mare cristallino e la vicinanza all'Argentario rendono quest'area una delle più apprezzate della costa toscana.</p>
       </div>
       <div class="loc-list">
-        <div class="row"><span class="place">Il mare</span><span class="time">~15 minuti</span></div>
-        <div class="row"><span class="place">Borgo di Capalbio</span><span class="time">pochi minuti</span></div>
-        <div class="row"><span class="place">Argentario · Porto Ercole</span><span class="time">~30–40 minuti</span></div>
-        <div class="row"><span class="place">Terme di Saturnia</span><span class="time">~40 minuti</span></div>
-        <div class="row"><span class="place">Aeroporti Roma / Pisa</span><span class="time">facilmente raggiungibili</span></div>
+        <div class="row"><span class="place" data-i18n="loc.sea">Il mare</span><span class="time" data-i18n="loc.sea.t">~15 minuti</span></div>
+        <div class="row"><span class="place" data-i18n="loc.town">Borgo di Capalbio</span><span class="time" data-i18n="loc.town.t">pochi minuti</span></div>
+        <div class="row"><span class="place" data-i18n="loc.argentario">Argentario · Porto Ercole</span><span class="time">~30–40 min</span></div>
+        <div class="row"><span class="place" data-i18n="loc.saturnia">Terme di Saturnia</span><span class="time">~40 min</span></div>
+        <div class="row"><span class="place" data-i18n="loc.airports">Aeroporti Roma / Pisa</span><span class="time" data-i18n="loc.airports.t">facilmente raggiungibili</span></div>
       </div>
     </div>
 
@@ -378,9 +418,9 @@ footer a{color:var(--blue-light)}
   <aside class="aside">
     <div class="agent-card">
       <div class="agent-top">
-        <div class="pl">Vendita</div>
-        <div class="price" style="font-size:1.9rem">Trattativa riservata</div>
-        <div class="note">Vendita diretta · Senza intermediari</div>
+        <div class="pl" data-i18n="hero.priceLabel">Vendita</div>
+        <div class="price" style="font-size:1.9rem" data-i18n="hero.priceVal">Trattativa riservata</div>
+        <div class="note" data-i18n="card.note">Vendita diretta · Senza intermediari</div>
       </div>
       <div class="agent-body">
         <div class="agent-id">
@@ -391,12 +431,13 @@ footer a{color:var(--blue-light)}
           </div>
         </div>
         <div class="agent-btns">
-          <a class="abtn primary" href="mailto:info@cdcitalia.com?subject=Richiesta%20informazioni%20—%20Villa%20Capalbio&body=Sono%20interessato%2Fa%20alla%20villa%20di%20Capalbio%20e%20vorrei%20ricevere%20maggiori%20informazioni.">Richiedi informazioni</a>
-          <a class="abtn ghost" href="tel:+390637519969">Chiama · 06 37519969</a>
+          <a class="abtn primary" href="https://calendly.com/cdcitalia-info" target="_blank" rel="noopener" data-i18n="card.book">Prenota una visita</a>
+          <a class="abtn ghost" href="mailto:info@cdcitalia.com?subject=Richiesta%20informazioni%20—%20Villa%20Capalbio&body=Sono%20interessato%2Fa%20alla%20villa%20di%20Capalbio%20e%20vorrei%20ricevere%20maggiori%20informazioni." data-i18n="card.email">Richiedi informazioni</a>
+          <a class="abtn ghost" href="tel:+390637519969">Tel · 06 37519969</a>
         </div>
         <div class="agent-contacts">
           <div class="cr"><span>Email</span><a href="mailto:info@cdcitalia.com?subject=Richiesta%20informazioni%20—%20Villa%20Capalbio">info@cdcitalia.com</a></div>
-          <div class="cr"><span>Telefono</span><a href="tel:+390637519969">06 37519969</a></div>
+          <div class="cr"><span data-i18n="card.tel">Telefono</span><a href="tel:+390637519969">06 37519969</a></div>
         </div>
       </div>
     </div>
@@ -405,11 +446,12 @@ footer a{color:var(--blue-light)}
 
 <section class="final" id="contatti">
   <div class="reveal">
-    <div class="eyebrow">Contatti</div>
-    <h2 class="lead">Organizziamo una <em>visita privata.</em></h2>
+    <div class="eyebrow" data-i18n="final.eyebrow">Contatti</div>
+    <h2 class="lead" data-i18n="final.lead" data-html="true">Organizziamo una <em>visita privata.</em></h2>
     <div class="final-btns">
-      <a class="fbtn primary" href="mailto:info@cdcitalia.com?subject=Richiesta%20informazioni%20—%20Villa%20Capalbio&body=Sono%20interessato%2Fa%20alla%20villa%20di%20Capalbio%20e%20vorrei%20ricevere%20maggiori%20informazioni.">Scrivi una email</a>
-      <a class="fbtn ghost" href="tel:+390637519969">Chiama · 06 37519969</a>
+      <a class="fbtn primary" href="https://calendly.com/cdcitalia-info" target="_blank" rel="noopener" data-i18n="card.book">Prenota una visita</a>
+      <a class="fbtn ghost" href="mailto:info@cdcitalia.com?subject=Richiesta%20informazioni%20—%20Villa%20Capalbio&body=Sono%20interessato%2Fa%20alla%20villa%20di%20Capalbio%20e%20vorrei%20ricevere%20maggiori%20informazioni." data-i18n="final.email">Scrivi una email</a>
+      <a class="fbtn ghost" href="tel:+390637519969">Tel · 06 37519969</a>
     </div>
   </div>
 </section>
@@ -417,11 +459,11 @@ footer a{color:var(--blue-light)}
 <footer>
   <div class="footer-logo"><img src="assets/logo-color.png" alt="CDC S.r.l."></div>
   <div class="fline">Via Carlo Mirabello 7, 00195 Roma — <a href="mailto:info@cdcitalia.com">info@cdcitalia.com</a> — 06 37519969</div>
-  <div class="disclaimer">Le informazioni contenute in questa pagina hanno carattere meramente illustrativo e non costituiscono elemento contrattuale né offerta al pubblico ai sensi dell'art. 1336 c.c. Dati, superfici e caratteristiche sono indicativi e dovranno essere verificati in sede di trattativa.</div>
+  <div class="disclaimer" data-i18n="footer.disclaimer">Le informazioni contenute in questa pagina hanno carattere meramente illustrativo e non costituiscono elemento contrattuale né offerta al pubblico ai sensi dell'art. 1336 c.c. Dati, superfici e caratteristiche sono indicativi e dovranno essere verificati in sede di trattativa.</div>
 </footer>
 
 <div class="mobile-cta">
-  <a href="tel:+390637519969">Chiama</a>
+  <a href="tel:+390637519969" data-i18n="mcta.call">Chiama</a>
   <a class="alt" href="mailto:info@cdcitalia.com?subject=Richiesta%20informazioni%20—%20Villa%20Capalbio">Email</a>
 </div>
 
@@ -434,6 +476,73 @@ footer a{color:var(--blue-light)}
 </div>
 
 <script>
+// ========== I18N ==========
+const I18N={
+  en:{
+    "hero.eyebrow":"Maremma Tuscany · Capalbio",
+    "hero.h1":"A residence between<br><em>sea and countryside</em>",
+    "hero.sub":"Newly built modern villa · Private 15,000 sqm grounds · Just minutes from the sea",
+    "hero.priceLabel":"For sale",
+    "hero.priceVal":"Price upon request",
+    "nav.overview":"Overview","nav.gallery":"Gallery","nav.wellness":"Wellness","nav.rent":"Rental","nav.land":"The Land","nav.location":"Location","nav.contact":"Request info",
+    "trust.surface":"Surface · 3 levels","trust.rooms":"Bedrooms · 7 bathrooms","trust.park":"Private grounds","trust.energy":"Energy class",
+    "overview.eyebrow":"The property",
+    "overview.lead":"Absolute privacy and <em>contemporary comfort</em>, set in a natural landscape of rare beauty.",
+    "overview.p1":"Recently completed and finely finished, the villa unfolds across three levels for approximately 250 sqm. The ground floor features a spacious open-plan living area with dining room and modern kitchen, designed to embrace natural light and foster conviviality.",
+    "overview.p2":"The sleeping quarters comprise four double bedrooms and a guest room, each with private bathroom. The lower level is dedicated to wellness, with a refined SPA area and a lounge opening onto a portico enclosed by wide sliding glass panels, enjoyable year-round.",
+    "specs.type":"Type","specs.typeV":"Detached villa","specs.surface":"Total surface","specs.levels":"Levels","specs.rooms":"Bedrooms / Bathrooms","specs.land":"Land surface","specs.garden":"Garden area","specs.energy":"Energy class","specs.heat":"Heating","specs.heatV":"Autonomous · Heat pump · Solar","specs.restr":"Building restrictions","specs.restrV":"None","specs.state":"Condition","specs.stateV":"Newly built · Furnished",
+    "gallery.eyebrow":"Gallery","gallery.lead":"Every space, designed for the light.","gallery.count":"13 photographs",
+    "wellness.eyebrow":"Wellness","wellness.lead":"An entire level dedicated <em>to relaxation.</em>",
+    "feat.spa.ico":"— SPA Area","feat.spa.h":"Private wellness","feat.spa.p":"Jacuzzi, sauna, emotional shower and salt wall, on the lower level dedicated to well-being.",
+    "feat.out.ico":"— Outdoor","feat.out.h":"Pool & solarium","feat.out.p":"Swimming pool with solarium area in the private grounds, integrated into the Maremma landscape.",
+    "feat.com.ico":"— Comfort","feat.com.h":"Year-round living","feat.com.p":"Lounge opening onto a glazed portico with wide sliding panels, ideal in every season.",
+    "feat.dot.ico":"— Features","feat.dot.h":"Efficiency & security","feat.dot.p":"Class A, heat pump and solar. Air conditioning, security system and refined finishes.",
+    "rent.eyebrow":"Rental","rent.lead":"Also available for <em>exclusive stays.</em>",
+    "rent.p":"The villa is available for high-season rentals — ideal for those wishing to experience the Maremma in complete privacy before a possible acquisition. A flexible formula, designed for weekly stays or longer periods.",
+    "rent.weekly":"Weekly","rent.weeklyUnit":"/ week","rent.weeklyNote":"High season · Entire villa with grounds, pool and SPA area",
+    "rent.monthly":"Monthly","rent.monthlyPrice":"Preferred rates","rent.monthlyNote":"Dedicated terms for monthly or extended stays, on request",
+    "land.eyebrow":"The Land","land.lead":"An <em>authentically Tuscan</em> heritage.",
+    "land.p1":"Beyond the villa itself, the estate invites its owners to live an authentic Tuscan ritual. The 15,000 sqm grounds include a private vineyard — ready to be restored to produce your own home-made Tuscan wine — and over one hundred olive trees, the timeless symbol of this land, capable of yielding the estate's own extra virgin olive oil.",
+    "land.p2":"A rare opportunity to combine the privacy of a contemporary residence with the soul of rural Tuscany: harvest, press, and bottle the fruits of your own land, just as Maremma families have done for generations.",
+    "land.vineyard.h":"Private vineyard","land.vineyard.p":"Ready to be restored for the production of the estate's own Tuscan wine.",
+    "land.olives.h":"Over 100 olive trees","land.olives.p":"For the production of the estate's own extra virgin olive oil.",
+    "loc.eyebrow":"Location","loc.lead":"Capalbio, between <em>Tuscany and Lazio.</em>",
+    "loc.p":"Capalbio, renowned for its authentic atmosphere and cultural heritage, sits in a privileged position in the Maremma. Long sandy beaches, crystal-clear sea and the proximity to the Argentario make this one of the most sought-after areas of the Tuscan coast.",
+    "loc.sea":"The sea","loc.sea.t":"~15 min","loc.town":"Capalbio old town","loc.town.t":"few minutes","loc.argentario":"Argentario · Porto Ercole","loc.saturnia":"Saturnia hot springs","loc.airports":"Rome / Pisa airports","loc.airports.t":"easily reachable",
+    "card.note":"Direct sale · No intermediaries","card.book":"Book a viewing","card.email":"Request information","card.tel":"Phone",
+    "final.eyebrow":"Contact","final.lead":"Let us arrange a <em>private viewing.</em>","final.email":"Send an email",
+    "mcta.call":"Call",
+    "footer.disclaimer":"The information on this page is for illustrative purposes only and does not constitute a contractual element nor a public offer pursuant to art. 1336 of the Italian Civil Code. Data, surfaces and features are indicative and must be verified during negotiations.",
+    "title":"Exclusive villa in Capalbio — Tuscan Maremma | CDC"
+  }
+};
+
+function setLang(lang){
+  document.documentElement.lang=lang;
+  try{localStorage.setItem('villa_lang',lang)}catch(e){}
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  // store IT originals once
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    if(!el.dataset.itOriginal){el.dataset.itOriginal=el.innerHTML}
+    const key=el.dataset.i18n;
+    if(lang==='en' && I18N.en[key]!==undefined){
+      el.innerHTML=I18N.en[key];
+    }else{
+      el.innerHTML=el.dataset.itOriginal;
+    }
+  });
+  if(lang==='en' && I18N.en.title){document.title=I18N.en.title}
+  else{document.title="Villa esclusiva a Capalbio — Maremma Toscana | CDC"}
+}
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+// init: browser language or stored preference
+(function(){
+  let saved=null;try{saved=localStorage.getItem('villa_lang')}catch(e){}
+  const browserLang=(navigator.language||'it').toLowerCase().startsWith('it')?'it':'en';
+  setLang(saved||browserLang);
+})();
+
+// ========== ORIGINAL JS ==========
 const slides=[...document.querySelectorAll('.slide')];
 const dotsWrap=document.getElementById('dots');
 let cur=0;
